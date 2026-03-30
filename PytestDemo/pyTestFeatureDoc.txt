@@ -1,0 +1,58 @@
+PyTest : Testing framework for Python
+
+Naming Convention: Pytest each file should start with "test_"
+
+Pytest to run in cmd :
+1. go to path 
+2. python -m pytest: run all the tests in pytest
+3. python -m pytest -v: v is for verbose it gives all the details of tests
+
+By default console logs will not be printed in cmd 
+if we want to print cosole logs we have to use flag "-s"
+i.e. : "python -m pytest -v -s" 
+
+## suppose if we have multiple methods with same name then 
+latest one will overrite the previous one ##
+
+# tagging one test case from one file ad another test case from different file
+" PytestDemo>python -m pytest -k second -v -s "
+we can do this using -k tag after k tag pass the keyWord all the methods
+with common method character or words that will help pytest 
+using -k for "method name execution"
+
+# Marking : we can mark smoke test by "@pytest.mark.smoke"
+cmd run command : "python -m pytest -m smoketest"
+
+mark.skip : used to skip test "@pytest.mark.skip"
+this will skip the complete operation of that particular test case
+
+we can also run the test but skip the reporting of the test if failing
+"@pytest.mark.xfail" : if the test pass status=xpassed otherwise xfailed
+
+??? What are Fixtures ???
+!!! Fixture is a setup and tear down methods which will run before and after 
+your test cases | reusable by test cases 
+"@pytest.fixture()"
+
+??? What is conftest ???
+if you declare our fixture in conftest file then that fixture will be available 
+for all pytest test files
+-- "@pytest.mark.usefixtures("setup")" --
+   before class which have multiple test cases define fixture for class level
+   so that each test cases can use 
+-- ?? What if I want to run once before the class and then after execution done?? --
+	We need to define the scope of the fixture in conftest file
+	" @pytest.fixture(scope="class") " like this one, it is a class level ficture
+fixtures not only help with the setup it can also ready the sata required
+by the test cases before hand
+
+## To generate html report we need to install pytest-html library ##
+	via : pip install pytest-html
+	-- Togenerate a report : python -m pytest --html=file_name.html : this tag is required to genrate a report 
+	To view the html report via cmd : "start file_name.html" run this inside the path file is present 
+	
+## Page Object Model ##
+creating classes related to page we are working on so it is easy to work with
+
+if you want to run tests parallely using pytest : "pytest -n auto"
+in console instead of auto we can give number on how many threads do we want to run test 

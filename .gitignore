@@ -1,0 +1,21 @@
+# Pytest cache
+.pytest_cache/
+
+# Selenium / test reports
+reports/
+htmlcov/
+*.html
+*.xml
+
+# Screenshots
+*.png
+*.jpg
+*.jpeg
+
+# IDE files
+.idea/
+
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,45 @@
+Chrome Option in Selenium Python
+
+#-- Browser Behavior --
+options.add_argument("--start-maximized")
+options.add_argument("--incognito")
+options.add_argument("--disable-extensions")
+options.add_argument("--disable-popup-blocking")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-notifications")
+
+#-- Headless & Behavior --
+options.add_argument("--headless=new")  # latest headless mode
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+#-- User Agent & Device Simm --
+options.add_argument("user-agent=MyCustomUserAgent")
+options.add_argument("--window-size=1920,1080")
+
+#-- Security & Certificates --
+options.add_argument("--ignore-certificate-errors")
+options.add_argument("--allow-insecure-localhost")
+
+#-- Download Behavior --
+options.add_argument("--disable-download-notification")
+
+#-- AutomationTesting Realated --
+options.add_argument("--disable-blink-features=AutomationControlled")
+options.add_argument("--remote-debugging-port=9222")
+
+#-- Memory & Stability --
+options.add_argument("--disable-dev-tools")
+options.add_argument("--disable-background-networking")
+options.add_argument("--disable-sync")
+
+#-- Using Experimental Options (Very Important) --
+options.add_experimental_option("prefs", {
+		"download.default_directory": "C:\\Downloads",
+		"download.prompt_for_download": False
+	})
+	
+#-- Capabilities to Know --
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option("useAutomationExtension", False)

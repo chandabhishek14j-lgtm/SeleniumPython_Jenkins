@@ -1,0 +1,10 @@
+FramWork Design using Pytest
+
+	# Avoid Hard Coding Test Data
+	# Feed test data from external files to maintain isolation between logic and data
+	# Apply the page object design pattern to separate page locators and actions from test files
+	# Centeralize Reusability: use common utilities(util.py) or configuration files(conftest.py), for better resuability
+	# Apply Grouping/Tagging to run targeted tests or run test parallely
+	# Integrate HTML reporting tools to generate detailed test reports
+	# Configure framework to auto generate logs or capture screenshots of failed test cases
+	# Integrate with CI/CD tools to automate the runs regularly and ensuring consistent feedback loop
